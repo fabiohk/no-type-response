@@ -9,5 +9,10 @@
     ],
     "health": {
         "status": "ok"
+    },
+    "nested": {
+        "key": {
+            "key": "value"
+        }
     }
   }
