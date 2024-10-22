@@ -1,6 +1,0 @@
-@NoTypeResponse_HostAddress = http://localhost:5240
-
-GET {{NoTypeResponse_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
