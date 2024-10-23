@@ -58,4 +58,13 @@ public class ExternalServiceController : ControllerBase
         var nestedKey = content?["key"] ?? JsonValue.Create("{}");
         return Ok(nestedKey);
     }
+
+    [HttpGet("new-field", Name = "GetObjectWithNewField")]
+    public async Task<ActionResult> GetObjectWithNewField()
+    {
+        var response = await _httpClient.GetAsync($"http://localhost:3000/nested");
+        var content = await response.Content.ReadFromJsonAsync<JsonNode>() ?? JsonValue.Create("{}");
+        content["newField"] = "new value";
+        return Ok(content);
+    }
 }
